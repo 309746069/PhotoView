@@ -1,18 +1,17 @@
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
 
 dependencies {
-  compile 'com.android.support:support-v4:18.0.+'
+    compile "com.android.support:support-v4:22.0.0"
 }
 
 android {
-  compileSdkVersion 18
-  buildToolsVersion '18.0.1'
+    compileSdkVersion 22
+    buildToolsVersion '22.0.1'
 
-  sourceSets {
-    main {
-      manifest.srcFile 'AndroidManifest.xml'
-      java.srcDirs = ['src']
-      res.srcDirs = ['res']
+    defaultConfig {
+        minSdkVersion 4
+        targetSdkVersion 22
     }
-  }
 }
+
+apply from: '../maven_push.gradle'
